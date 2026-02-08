@@ -1,9 +1,10 @@
+import { memo } from "react";
 import { Box, Typography } from "@mui/material";
 import styles from "./progress-card.styles";
 import Subsection from "../sub-section/sub-section.component";
 import type { ProgressCardProps } from "../../progress-status-grid.types";
 
-const ProgressCard = ({
+const ProgressCard = memo(({
   title,
   percentage,
   headerColor,
@@ -23,6 +24,6 @@ const ProgressCard = ({
       </Box>
     </Box>
   );
-};
+});
 
 export default ProgressCard;

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Box } from "@mui/material";
 
 import {
@@ -10,7 +11,7 @@ interface ItemCircleProps {
   item: StatusItem;
 }
 
-const ItemCircle = ({ item }: ItemCircleProps) => {
+const ItemCircle = memo(({ item }: ItemCircleProps) => {
   return (
     <Box
       sx={{
@@ -21,6 +22,6 @@ const ItemCircle = ({ item }: ItemCircleProps) => {
       {item.id}
     </Box>
   );
-};
+});
 
 export default ItemCircle;
