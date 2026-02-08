@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 
 import Sidebar from "../ui/sidebar/sidebar.component";
 import Topbar from "../ui/topbar/topbar.component";
+import ErrorBoundary from "../ui/error-boundary/error-boundary.component";
 import layoutStyles from "./layout.styles";
 
 export const Layout: React.FC = () => {
@@ -19,7 +20,9 @@ export const Layout: React.FC = () => {
 
         {/* Outlet content */}
         <Box sx={layoutStyles.outletContent}>
-          <Outlet />
+          <ErrorBoundary>
+            <Outlet />
+          </ErrorBoundary>
         </Box>
       </Box>
     </Box>

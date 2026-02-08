@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   Box,
@@ -21,9 +21,9 @@ const Sidebar: React.FC = () => {
   const isTablet = useMediaQuery("(max-width:900px)");
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
-  };
+  const toggleSidebar = useCallback(() => {
+    setIsCollapsed((prev) => !prev);
+  }, []);
 
   useEffect(() => {
     if (isTablet) {

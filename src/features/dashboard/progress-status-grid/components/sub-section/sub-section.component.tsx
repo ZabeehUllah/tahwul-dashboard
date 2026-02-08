@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Box, Typography } from "@mui/material";
 import styles from "./sub-section.styles";
 import ItemCircle from "../item-circle/item-circle.component";
@@ -7,7 +8,7 @@ interface SubsectionProps {
   sub: SubSection;
 }
 
-const Subsection = ({ sub }: SubsectionProps) => {
+const Subsection = memo(({ sub }: SubsectionProps) => {
   return (
     <Box sx={styles.subsection}>
       <Typography sx={styles.subsectionTitle}>{sub.heading}</Typography>
@@ -19,6 +20,6 @@ const Subsection = ({ sub }: SubsectionProps) => {
       </Box>
     </Box>
   );
-}
+});
 
 export default Subsection;
